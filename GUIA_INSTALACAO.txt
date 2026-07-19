@@ -1,0 +1,24 @@
+==================================================================
+GUIA DE PREPARACAO - ANTES DA AULA
+Workshop #2.7
+==================================================================
+
+1. Tenha uma conta no GitHub.
+2. Instale o Git e teste com:
+   git --version
+3. Configure seu nome e email:
+   git config --global user.name "Seu Nome"
+   git config --global user.email "seuemail@exemplo.com"
+4. Instale o JDK 17 ou superior e teste com:
+   java -version
+5. Instale um editor de codigo, como o VS Code.
+6. Faca o fork do repositorio divulgado pelos apresentadores.
+7. Clone o seu fork:
+   git clone URL_DO_SEU_FORK
+8. Entre na pasta:
+   cd workshop-pr
+9. Crie uma branch:
+   git checkout -b correcao-seu-nome
+
+O arquivo do Checkstyle ja esta incluido no repositorio. Nao e
+necessario baixa-lo separadamente.

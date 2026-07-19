@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+    "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+    "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<!-- Configuracao do Checkstyle para o Workshop #2.7 -->
+<!-- Regras simplificadas para a atividade em sala -->
+
+<module name="Checker">
+    <property name="charset" value="UTF-8"/>
+    <property name="severity" value="warning"/>
+
+    <!-- Linhas muito longas -->
+    <module name="LineLength">
+        <property name="max" value="120"/>
+    </module>
+
+    <module name="TreeWalker">
+
+        <!-- Imports nao utilizados -->
+        <module name="UnusedImports"/>
+
+        <!-- Nome de classe deve comecar com maiuscula (PascalCase) -->
+        <module name="TypeName"/>
+
+        <!-- Nome de metodo deve ser camelCase -->
+        <module name="MethodName"/>
+
+        <!-- Nome de variavel deve ser camelCase -->
+        <module name="MemberName"/>
+
+        <!-- Numeros magicos (valores soltos no codigo) -->
+        <module name="MagicNumber">
+            <property name="ignoreNumbers" value="-1, 0, 1"/>
+        </module>
+
+        <!-- if/else/for sem chaves -->
+        <module name="NeedBraces"/>
+
+        <!-- Atributos publicos (quebra de encapsulamento) -->
+        <module name="VisibilityModifier"/>
+
+        <!-- Comparacao redundante com true/false (ex: if (x == true)) -->
+        <module name="SimplifyBooleanExpression"/>
+
+        <!-- return true/false redundante dentro de if/else -->
+        <module name="SimplifyBooleanReturn"/>
+
+        <!-- Metodos muito longos -->
+        <module name="MethodLength">
+            <property name="max" value="25"/>
+        </module>
+
+    </module>
+</module>

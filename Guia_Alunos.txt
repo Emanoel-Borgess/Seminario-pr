@@ -1,0 +1,71 @@
+==================================================================
+GUIA DA ATIVIDADE - ALUNOS
+Workshop #2.7 - Inspecao e Revisao de Codigo com Pull Requests
+==================================================================
+
+OBJETIVO
+
+Cada aluno ira:
+- corrigir um arquivo usando os avisos do Checkstyle;
+- criar um Pull Request;
+- acompanhar a validacao automatica no GitHub Actions;
+- revisar dois Pull Requests de exemplo.
+
+Cada aluno trabalha individualmente no proprio fork.
+
+------------------------------------------------------------------
+1. ESCOLHER E CORRIGIR UM ARQUIVO
+------------------------------------------------------------------
+
+Escolha um:
+- Calculadora.java
+- usuario.java
+- PedidoService.java
+- RelatorioUtil.java
+
+No Windows, execute na raiz do projeto:
+
+.\RODAR_CHECKSTYLE.bat Calculadora.java
+
+Troque Calculadora.java pelo arquivo escolhido.
+
+Ou execute diretamente:
+
+java -jar .\checkstyle-10.21.1-all.jar -c .\checkstyle.xml .\src\main\java\com\workshop\Calculadora.java
+
+Use os avisos para orientar as correcoes. Exemplos:
+- remover imports nao utilizados;
+- ajustar nomes de classes, metodos e variaveis;
+- trocar atributos public por private;
+- substituir numeros magicos por constantes;
+- adicionar chaves em if, else e for.
+
+Nao e necessario eliminar todos os avisos durante a atividade.
+
+------------------------------------------------------------------
+2. COMMIT, PUSH E PULL REQUEST
+------------------------------------------------------------------
+
+git add .
+git commit -m "Corrige warnings do Checkstyle"
+git push origin SUA-BRANCH
+
+Depois, abra um Pull Request no GitHub.
+
+------------------------------------------------------------------
+3. ACOMPANHAR A VALIDACAO
+------------------------------------------------------------------
+
+No Pull Request, confira a secao de checks. Abra "Details" para
+ver a execucao do Checkstyle no GitHub Actions.
+
+------------------------------------------------------------------
+4. REVISAR OS PRs DE EXEMPLO
+------------------------------------------------------------------
+
+Para cada PR compartilhado pelos apresentadores:
+1. abra "Files changed";
+2. encontre pelo menos um problema;
+3. comente na linha correspondente;
+4. finalize em "Review changes";
+5. escolha "Approve" ou "Request changes".
