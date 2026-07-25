@@ -1,21 +1,27 @@
 ==================================================================
 GUIA DA ATIVIDADE - ALUNOS
-Workshop #2.7 - Inspecao e Revisao de Codigo com Pull Requests
+Workshop #2.7 - Inspeção e Revisão de Código com Pull Requests
 ==================================================================
 
 OBJETIVO
 
-Cada aluno ira:
+Cada aluno irá:
 - corrigir um arquivo usando os avisos do Checkstyle;
 - criar um Pull Request;
-- acompanhar a validacao automatica no GitHub Actions;
+- acompanhar a validação automática no GitHub Actions;
 - revisar dois Pull Requests de exemplo.
 
-Cada aluno trabalha individualmente no proprio fork.
+Cada aluno trabalha individualmente no próprio fork.
 
 ------------------------------------------------------------------
-1. ESCOLHER E CORRIGIR UM ARQUIVO
+ETAPAS DA ATIVIDADE (20 min) - 4 blocos de 5 minutos, cada um com
+objetivo e marco de alinhamento. Os apresentadores avisam o tempo
+em voz alta em cada marco, pra turma toda ficar no mesmo ponto.
 ------------------------------------------------------------------
+
+ETAPA 1 - ESCOLHER E CORRIGIR UM ARQUIVO (5 min)
+Objetivo: rodar o Checkstyle localmente e aplicar o máximo de
+correções possível no arquivo escolhido.
 
 Escolha um:
 - Calculadora.java
@@ -24,48 +30,67 @@ Escolha um:
 - RelatorioUtil.java
 
 No Windows, execute na raiz do projeto:
-
-.\RODAR_CHECKSTYLE.bat Calculadora.java
-
-Troque Calculadora.java pelo arquivo escolhido.
+     .\RODAR_CHECKSTYLE.bat Calculadora.java
+     (troque Calculadora.java pelo arquivo escolhido)
 
 Ou execute diretamente:
+     java -jar .\checkstyle-10.21.1-all.jar -c .\checkstyle.xml .\src\main\java\com\workshop\Calculadora.java
 
-java -jar .\checkstyle-10.21.1-all.jar -c .\checkstyle.xml .\src\main\java\com\workshop\Calculadora.java
+No Mac/Linux, o comando equivalente é:
+     java -jar checkstyle-10.21.1-all.jar -c checkstyle.xml src/main/java/com/workshop/Calculadora.java
 
-Use os avisos para orientar as correcoes. Exemplos:
-- remover imports nao utilizados;
-- ajustar nomes de classes, metodos e variaveis;
+Use os avisos para orientar as correções. Exemplos:
+- remover imports não utilizados;
+- ajustar nomes de classes, métodos e variáveis;
 - trocar atributos public por private;
-- substituir numeros magicos por constantes;
+- substituir números mágicos por constantes;
 - adicionar chaves em if, else e for.
 
-Nao e necessario eliminar todos os avisos durante a atividade.
+Não é necessário eliminar todos os avisos durante a atividade.
 
-------------------------------------------------------------------
-2. COMMIT, PUSH E PULL REQUEST
-------------------------------------------------------------------
+Marco (5 min): o apresentador avisa "parem aqui" - mesmo quem não
+terminou de corrigir tudo avança pra próxima etapa.
 
-git add .
-git commit -m "Corrige warnings do Checkstyle"
-git push origin SUA-BRANCH
+ETAPA 2 - COMMIT, PUSH E PULL REQUEST (5 min)
+Objetivo: subir as alterações pro GitHub e abrir o Pull Request,
+praticando o fluxo real de contribuição.
 
-Depois, abra um Pull Request no GitHub.
+     git add .
+     git commit -m "Corrige warnings do Checkstyle"
+     git push origin SUA-BRANCH
 
-------------------------------------------------------------------
-3. ACOMPANHAR A VALIDACAO
-------------------------------------------------------------------
+Depois, abra um Pull Request no GitHub a partir da sua branch.
+Um título simples já é suficiente.
 
-No Pull Request, confira a secao de checks. Abra "Details" para
-ver a execucao do Checkstyle no GitHub Actions.
+Marco (5 min): o apresentador confere na aba "Pull Requests" do
+repositório quantos PRs já apareceram.
 
-------------------------------------------------------------------
-4. REVISAR OS PRs DE EXEMPLO
-------------------------------------------------------------------
+ETAPA 3 - ACOMPANHAR A VALIDAÇÃO (5 min)
+Objetivo: ver o Checkstyle rodando automaticamente no seu PR via
+GitHub Actions, e corrigir mais alguma coisa se sobrar tempo.
+
+No Pull Request, confira a seção de checks (perto do botão de
+merge). Abra "Details" para ver a execução do Checkstyle no
+GitHub Actions. Se aparecer um X vermelho, veja quais avisos
+ainda restam - se der tempo, corrija, comite e suba de novo, o
+PR atualiza sozinho.
+
+Marco (5 min): quem já está com o check verde levanta a mão.
+
+ETAPA 4 - REVISAR OS PRs DE EXEMPLO (5 min)
+Objetivo: praticar o papel de revisor - ler código de outra
+pessoa, apontar problema e decidir se aprova.
 
 Para cada PR compartilhado pelos apresentadores:
 1. abra "Files changed";
-2. encontre pelo menos um problema;
+2. encontre pelo menos um problema restante;
 3. comente na linha correspondente;
 4. finalize em "Review changes";
 5. escolha "Approve" ou "Request changes".
+
+Marco (5 min): o apresentador pergunta quem já comentou nos dois
+PRs de exemplo - encerra a atividade.
+
+------------------------------------------------------------------
+TOTAL: 5 + 5 + 5 + 5 = 20 minutos
+------------------------------------------------------------------
