@@ -1,12 +1,12 @@
 package com.workshop;
 
 import java.util.List;
-import java.util.LinkedList;
-import java.util.Iterator;
 
 public class RelatorioUtil {
 
-    public static String GERAR_RELATORIO(List<String> linhas) {
+    private static final int INDICE_NAO_ENCONTRADO = -1;
+
+    public static String gerarRelatorio(List<String> linhas) {
         String resultado = "";
         for (int i = 0; i < linhas.size(); i++) {
             resultado = resultado + linhas.get(i) + "\n";
@@ -15,17 +15,17 @@ public class RelatorioUtil {
     }
 
     public static boolean temErro(String linha) {
-        if (linha.indexOf("ERRO") != -1) return true; else return false;
+        return linha.indexOf("ERRO") != INDICE_NAO_ENCONTRADO;
     }
 
     public static int contarErros(List<String> linhas) {
-        int c = 0;
+        int contador = 0;
         for (int i = 0; i < linhas.size(); i++) {
-            String l = linhas.get(i);
-            if (temErro(l) == true) {
-                c++;
+            String linhaAtual = linhas.get(i);
+            if (temErro(linhaAtual)) {
+                contador++;
             }
         }
-        return c;
+        return contador;
     }
 }
